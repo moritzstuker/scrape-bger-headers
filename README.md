@@ -1,6 +1,8 @@
 # Scrape BGer headers
 Ruby script to scrape the swiss supreme court decision's headers.
 
+Word of warning: this is just a first try; there's massive room for improvement. _Caveat emptor._
+
 ## Files
 
 Two .rb files are included:
