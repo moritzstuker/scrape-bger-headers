@@ -7,7 +7,7 @@ Word of warning: this is just a first try; there's massive room for improvement.
 
 Two .rb files are included:
 
-- `scrabe2md.rb` scrapes all decisions from year 134 (2008) to 144 (2018) and renders a .md file for each volume (I to IV) by year.
+- `scrabe2md.rb` scrapes all decisions from year 134 (2008) to 144 (2018) and renders a .md file for each volume (I to V).
 - `scrabe2jekyll.rb` does the same but outputs a [jekyll](https://jekyllrb.com) collection file.
 
 ## Requirements
