@@ -50,17 +50,19 @@ volumes.each do |volume|
     volName = "Droit des assurances sociales"
   end
 
-  years.each do |year|
 
-    page = Nokogiri::HTML(open(url(year, volume)))
-    links = page.css('ol li a')
-    filename = year + " " + volume + ".md"
+  filename = volName + ".md"
 
-    if !File.file?(dir + filename)
-      puts "Creating #{dir + filename}..."
-      f = File.new(dir + filename, 'w')
+  if !File.file?(dir + filename)
+    puts "Creating #{dir + filename}..."
+    f = File.new(dir + filename, 'w')
 
-      f.write("# Année #{year} (#{year.to_i + 1874}) - Volume #{volume} (#{volName})\n\n")
+    f.write("# Volume #{volume} (#{volName}) - Années #{scopeStart} (#{scopeStart.to_i + 1874}) à #{scopeEnd} (#{scopeEnd.to_i + 1874})\n\n")
+
+    years.each do |year|
+
+      page = Nokogiri::HTML(open(url(year, volume)))
+      links = page.css('ol li a')
 
       links.each_with_index do |link, i|
 
@@ -72,10 +74,8 @@ volumes.each do |volume|
         end
 
       end
-
-      f.close
-
     end
+    f.close
   end
 end
 
